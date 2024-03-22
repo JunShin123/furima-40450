@@ -9,14 +9,13 @@
 | encrypted_password    | string              | null: false               |
 | family_name           | string              | null: false               |
 | first_name            | string              | null: false               |
-| read__family          | string              | null: false               |
+| read_family           | string              | null: false               |
 | read_first            | string              | null: false               |
 | birthday              | date                | null: false               |
 
 ### Association
 
 * has_many :items
-* has_many :buyers
 * has_many :historys
 
 ## items table
@@ -29,16 +28,15 @@
 | condition_id                        | integer    | null: false                    |
 | shipping_price_id                   | integer    | null: false                    |
 | region_of_origin_id                 | integer    | null: false                    |
-| shipment_days_id                    | integer    | null: false                    |
+| shipment_day_id                     | integer    | null: false                    |
 | price                               | integer    | null: false                    |
-| user                                | reference  | null: false, foreign_key: true |
+| user                                | references | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user
-* has_one :buyer
-* has_many :historys
+* has_one :history
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_price
@@ -51,19 +49,17 @@
 | Column           | Type       | Options                        |
 |------------------|------------|--------------------------------|
 | post_code        | string     | null: false                    |
-| prefecture_id    | integer    | null: false, foreign_key: true |
+| prefecture_id    | integer    | null: false                    |
 | city             | string     | null: false                    |
 | street           | string     | null: false                    |
 | building         | string     |                                |
 | phone_number     | string     | null: false                    |
-| item             | integer    | null: false, foreign_key: true |
+| history          | integer    | null: false, foreign_key: true |
 
 
 ### Association
 
-- belongs_to :user
-- belongs_to :item 
-* has_many :historys
+- belongs_to :history
 - belongs_to_active_hash :prefecture
 
 
@@ -71,9 +67,8 @@
 
 | Column           | Type       | Options                        |
 |------------------|------------|--------------------------------|
-| user             | integer    | null: false, foreign_key: true |
-| item             | integer    | null: false, foreign_key: true |
-| buy_date         | date       | null: false, foreign_key: true |
+| user             | references | null: false, foreign_key: true |
+| item             | references | null: false, foreign_key: true |
 
 
 ### Association
