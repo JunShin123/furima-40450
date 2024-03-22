@@ -16,7 +16,7 @@
 ### Association
 
 * has_many :items
-* has_many :historys
+* has_many :histories
 
 ## items table
 
@@ -27,7 +27,7 @@
 | category_id                         | integer    | null: false                    |
 | condition_id                        | integer    | null: false                    |
 | shipping_price_id                   | integer    | null: false                    |
-| region_of_origin_id                 | integer    | null: false                    |
+| prefecture_id                       | integer    | null: false                    |
 | shipment_day_id                     | integer    | null: false                    |
 | price                               | integer    | null: false                    |
 | user                                | references | null: false, foreign_key: true |
@@ -40,8 +40,8 @@
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_price
-- belongs_to_active_hash :region_of_origin
-- belongs_to_active_hash :shipment_days
+- belongs_to_active_hash :prefecture
+- belongs_to_active_hash :shipment_day
 
 
 ## buyers table
@@ -54,7 +54,7 @@
 | street           | string     | null: false                    |
 | building         | string     |                                |
 | phone_number     | string     | null: false                    |
-| history          | integer    | null: false, foreign_key: true |
+| history          | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -63,7 +63,7 @@
 - belongs_to_active_hash :prefecture
 
 
-## historys table
+## histories table
 
 | Column           | Type       | Options                        |
 |------------------|------------|--------------------------------|
