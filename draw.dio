@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="3nuPZDuHcH0399a-2Pfd" name="ページ1">
-        <mxGraphModel dx="1066" dy="787" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1134" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -64,9 +64,6 @@
                 <mxCell id="lNCasj2mK89Bv8E5Dec7-38" value="price" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="lNCasj2mK89Bv8E5Dec7-5">
                     <mxGeometry y="270" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="lNCasj2mK89Bv8E5Dec7-54" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1.067;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;startSize=20;endSize=20;" edge="1" parent="1" source="lNCasj2mK89Bv8E5Dec7-13" target="lNCasj2mK89Bv8E5Dec7-29">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
                 <mxCell id="lNCasj2mK89Bv8E5Dec7-13" value="historys" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="40" y="482" width="160" height="116" as="geometry"/>
                 </mxCell>
@@ -108,7 +105,7 @@
                         <mxPoint x="480" y="390" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="lNCasj2mK89Bv8E5Dec7-53" style="edgeStyle=none;html=1;exitX=0.006;exitY=0.267;exitDx=0;exitDy=0;startArrow=ERone;startFill=0;endArrow=ERoneToMany;endFill=0;startSize=20;endSize=20;exitPerimeter=0;" edge="1" parent="1" source="lNCasj2mK89Bv8E5Dec7-41">
+                <mxCell id="lNCasj2mK89Bv8E5Dec7-53" style="edgeStyle=none;html=1;exitX=0.006;exitY=0.267;exitDx=0;exitDy=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;startSize=20;endSize=20;exitPerimeter=0;" edge="1" parent="1" source="lNCasj2mK89Bv8E5Dec7-41">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="200" y="546" as="targetPoint"/>
                     </mxGeometry>

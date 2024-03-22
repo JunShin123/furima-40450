@@ -7,33 +7,30 @@
 | nickname              | string              | null: false               |
 | email                 | string              | null: false, unique: true |
 | encrypted_password    | string              | null: false               |
-| password_confirmation | string              | null: false               |
-| family_name           | text                | null: false               |
-| first_name            | text                | null: false               |
-| read__family          | text                | null: false               |
-| read_first            | text                | null: false               |
+| family_name           | integer             | null: false               |
+| first_name            | integer             | null: false               |
+| read__family          | integer             | null: false               |
+| read_first            | integer             | null: false               |
 | birthday              | date                | null: false               |
 
 ### Association
 
 * has_many :items
 * has_many :buyers
-- belongs_to :history
 
 ## items table
 
 | Column                              | Type       | Options                        |
 |-------------------------------------|------------|--------------------------------|
-| photo                               | text       | null: false                    |
 | name                                | string     | null: false                    |
 | explanation                         | text       | null: false                    |
-| category                            | integer    | null: false                    |
-| condition                           | integer    | null: false                    |
-| shipping_price                      | integer    | null: false                    |
-| region_of_origin                    | integer    | null: false                    |
-| shipment_days                       | integer    | null: false                    |
-| price                               | integer    | null: false                    |
-| user                                | reference  | null: false                    |
+| category_id                         | integer    | null: false                    |
+| condition_id                        | integer    | null: false                    |
+| shipping_price_id                   | integer    | null: false                    |
+| region_of_origin_id                 | integer    | null: false, foreign_key: true |
+| shipment_days_id                    | integer    | null: false, foreign_key: true |
+| price                               | integer    | null: false, foreign_key: true |
+| user                                | reference  | null: false, foreign_key: true |
 
 
 ### Association
@@ -63,9 +60,9 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :item
-- belongs_to_active_hash :prefecture
+- belongs_to :item 
 * has_many :historys
+- belongs_to_active_hash :prefecture
 
 
 ## historys table
