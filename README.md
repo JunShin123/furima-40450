@@ -7,16 +7,17 @@
 | nickname              | string              | null: false               |
 | email                 | string              | null: false, unique: true |
 | encrypted_password    | string              | null: false               |
-| family_name           | integer             | null: false               |
-| first_name            | integer             | null: false               |
-| read__family          | integer             | null: false               |
-| read_first            | integer             | null: false               |
+| family_name           | string              | null: false               |
+| first_name            | string              | null: false               |
+| read__family          | string              | null: false               |
+| read_first            | string              | null: false               |
 | birthday              | date                | null: false               |
 
 ### Association
 
 * has_many :items
 * has_many :buyers
+* has_many :historys
 
 ## items table
 
@@ -27,9 +28,9 @@
 | category_id                         | integer    | null: false                    |
 | condition_id                        | integer    | null: false                    |
 | shipping_price_id                   | integer    | null: false                    |
-| region_of_origin_id                 | integer    | null: false, foreign_key: true |
-| shipment_days_id                    | integer    | null: false, foreign_key: true |
-| price                               | integer    | null: false, foreign_key: true |
+| region_of_origin_id                 | integer    | null: false                    |
+| shipment_days_id                    | integer    | null: false                    |
+| price                               | integer    | null: false                    |
 | user                                | reference  | null: false, foreign_key: true |
 
 
@@ -37,6 +38,7 @@
 
 - belongs_to :user
 * has_one :buyer
+* has_one :historys
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_price
@@ -49,7 +51,7 @@
 | Column           | Type       | Options                        |
 |------------------|------------|--------------------------------|
 | post_code        | string     | null: false                    |
-| prefecture       | integer    | null: false, foreign_key: true |
+| prefecture_id    | integer    | null: false, foreign_key: true |
 | city             | string     | null: false                    |
 | street           | string     | null: false                    |
 | building         | string     |                                |
@@ -76,5 +78,6 @@
 
 ### Association
 
-- belongs_to :buyer
-* has_one :user
+* has_one :buyer
+* belongs_to :user
+- belongs_to :item
