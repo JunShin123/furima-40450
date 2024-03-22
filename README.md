@@ -38,7 +38,7 @@
 
 - belongs_to :user
 * has_one :buyer
-* has_one :historys
+* has_many :historys
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_price
