@@ -12,6 +12,6 @@ class User < ApplicationRecord
   validates :read_first , presence: true, format: { with: /\A[ァ-ヶー]+\z/}
   validates :birthday , presence: true
   
- # has_many :items
- # has_many :histories
+  has_many :items
+  has_many :histories
 end
