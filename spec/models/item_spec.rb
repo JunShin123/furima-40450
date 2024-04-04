@@ -28,35 +28,45 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Name can't be blank")
       end
+      it '商品名が40文字を超えると保存できない' do
+        @item.name = 'a' * 41
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Name is too long (maximum is 40 characters)')
+      end
       it '商品の説明が空欄だと出品できない' do
         @item.explanation = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Explanation can't be blank")
       end
-      it 'カテゴリーの情報が「---」だと出品できない' do
-        @item.category_id = 0
+      it '商品説明が1000文字を超えると保存できない' do
+        @item.explanation = 'a' * 1001
         @item.valid?
-        expect(@item.errors.full_messages).to include('Category must be other than 0')
+        expect(@item.errors.full_messages).to include('Explanation is too long (maximum is 1000 characters)')
+      end
+      it 'カテゴリーの情報が「---」だと出品できない' do
+        @item.category_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
       it '商品の状態の情報が「---」だと出品できない' do
-        @item.condition_id = 0
+        @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Condition must be other than 0')
+        expect(@item.errors.full_messages).to include('Condition must be other than 1')
       end
       it '配送料の負担の情報が「---」だと出品できない' do
-        @item.shipping_price_id = 0
+        @item.shipping_price_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Shipping price must be other than 0')
+        expect(@item.errors.full_messages).to include('Shipping price must be other than 1')
       end
       it '発送元の地域の情報が「---」だと出品できない' do
-        @item.prefecture_id = 0
+        @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Prefecture must be other than 0')
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
       end
       it '発送までの日数の情報が「---」だと出品できない' do
-        @item.shipment_day_id = 0
+        @item.shipment_day_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Shipment day must be other than 0')
+        expect(@item.errors.full_messages).to include('Shipment day must be other than 1')
       end
       it '価格が空欄だと出品できない' do
         @item.price = nil
