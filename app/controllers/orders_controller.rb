@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_order
+  before_action :seller_move_to_index
   before_action :soldout_move_to_index
 
   def index
@@ -41,5 +42,9 @@ class OrdersController < ApplicationController
 
   def soldout_move_to_index
     redirect_to root_path if @item.history.present?
+  end
+
+  def seller_move_to_index
+    redirect_to root_path if current_user == @item.user
   end
 end
